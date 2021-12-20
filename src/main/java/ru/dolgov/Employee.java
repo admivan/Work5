@@ -7,12 +7,13 @@ public class Employee {
     /**
      * Создаем поля
      */
-    protected String fio;
-    protected String post;
-    protected String email;
-    protected String phone;
-    protected int pay;
-    protected int age;
+    private String fio;
+    private String post;
+    private String email;
+    private String phone;
+    private int pay;
+    private int age;
+
 
     /**
      * Конструктор класса и заполняем данными поля
@@ -23,7 +24,7 @@ public class Employee {
      * @param pay принимаем зарплату
      * @param age принимаем возраст
      */
-    public Employee(String fio,String post,String email,String phone, int pay, int age){
+    protected Employee(String fio,String post,String email,String phone, int pay, int age){
         this.fio=fio;
         this.post=post;
         this.email=email;
@@ -31,19 +32,14 @@ public class Employee {
         this.pay=pay;
         this.age=age;
     }
-
-    /**
-     * Переопределяем метод toString
-     * @return Возвращаем данные с полей
-     */
-    @Override
-    public String toString() {
-        return  "Фамилия Имя Отчество = " + fio + '\'' +
-                ", Должность = " + post + '\'' +
-                ", email = " + email + '\'' +
-                ", Телефон = " + phone + '\'' +
-                ", Зарплата = " + pay +
-                ", Возраст = " + age;
+    //метод возврата возраста
+    public int getAge() {
+        return age;
+    }
+    //метод вывода данных
+    protected void show(){
+        System.out.println("Фамилия Имя Отчество = "+fio + ", Должность = " + post + ", Почта = " + email + ", Телефон = " +
+                phone + ", Зарплата = " + pay + ", Возраст = " + age);
     }
 
 }
